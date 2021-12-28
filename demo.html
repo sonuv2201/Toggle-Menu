@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Toggle Menu Using Css</title>
+    <style>
+        body {
+            background: #eee;
+        }
+
+        .wrapper {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .menu-item label {
+            width: 70px;
+            height: 70px;
+            background: #fff;
+            display: flex;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+            padding: 14px;
+            box-sizing: border-box;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        label span {
+            display: inline-block;
+            width: 43px;
+            height: 4px;
+            background: black;
+        }
+
+        label span {
+            transition: 0.5s;
+        }
+
+        label span:nth-child(3) {
+            width: 20px;
+        }
+
+        label span:nth-child(1) {
+            width: 29px;
+        }
+
+        input:checked+label span:nth-child(2) {
+            transform: translateX(100px);
+        }
+
+        input:checked+label span:nth-child(1) {
+            transform: translate(-8px, 20px) rotate(45deg);
+            width: 60px;
+        }
+
+        input:checked+label span:nth-child(3) {
+            width: 60px;
+            transform: translate(-8px, -18px) rotate(133deg);
+        }
+
+        label:hover span {
+            width: 43px;
+        }
+
+        .menu-item input {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="menu-item">
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+    </div>
+</body>
+
+</html>
